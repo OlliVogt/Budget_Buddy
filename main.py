@@ -1,4 +1,3 @@
-from matplotlib.pyplot import pause
 import pandas as pd
 from datetime import datetime
 import os
@@ -89,15 +88,14 @@ def volksbank(df):
     print(f'total savings = {total_savings}€')
 
     # print savings across months
-    df_savings = df.loc[:, ('Buchungstag', 'Betrag', 'Kategorie')]
-    df_savings.index = df_savings['Buchungstag']
-    # df_savings_monthly = df_savings.groupby(by=[df_savings.index.month, df_savings.index.year])
+    df_savings = df.loc[:, ('Buchungstag', 'Betrag')]
+    df_savings.set_index('Buchungstag', drop=True, inplace=True)
     
-    # df_savings_monthly = df_savings.groupby([lambda x: x.year, lambda x: x.month]).sum()
-    # print(df_savings_monthly)
+    df_savings_monthly = df_savings.groupby([lambda x: x.year, lambda x: x.month]).sum()
+    print(df_savings_monthly)
 
-    # average_savings = df_savings_monthly['Betrag'].sum() / len(df_savings_monthly)
-    # print(f'Average saving is {round(average_savings, 2)} €')
+    average_savings = df_savings_monthly['Betrag'].sum() / len(df_savings_monthly)
+    print(f'Average saving is {round(average_savings, 2)} €')
 
 def dkb(df):
     df['Betrag (€)'] = df['Betrag (€)'].str.replace(',','.').astype(float)
