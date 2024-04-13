@@ -34,11 +34,11 @@ class account:
         self.df = self.df.loc[(self.df[self.columns.booking_date] < end_date) & (self.df[self.columns.booking_date] >= start_date)]
     
     def save_original_categorized_file(self, output_filename):
-        self.df.to_csv(os.getcwd() + '/' + output_filename + '.csv', index = False)
+        self.df.to_csv(os.getcwd() + '/.out/' + output_filename + '.csv', index = False)
     
     def save_short_categorized_file(self, output_filename):
         df_short = self.df.loc[:,(self.columns.booking_date, self.columns.purpose_of_use, self.columns.sender_name, self.columns.amount, self.columns.category)]
-        df_short.to_csv(os.getcwd() + '/' + output_filename + '_short.csv', index = False)
+        df_short.to_csv(os.getcwd() + '/.out/' + output_filename + '_short.csv', index = False)
     
     def print_savings(self):
         # print sum of all expenses, also known as total savings

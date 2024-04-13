@@ -15,6 +15,10 @@ parser.add_argument('--csv', dest='csv', help='Path to the .csv file', required=
 args = parser.parse_args()
 input_filename = args.csv
 
+out_dir = os.getcwd() + '/.out'
+if not os.path.isdir(out_dir):
+    os.makedirs(out_dir)
+
 def searchReplace(filename, search_text, replace_text):
     with open(filename, 'r') as file:
         data = file.read()  
