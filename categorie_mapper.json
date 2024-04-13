@@ -1,4 +1,4 @@
-{ 
+{
     "EnBW Energie": "Nebenkosten",
     "Telekom Deutschland GmbH": "Nebenkosten",
     "Rundfunk ARD, ZDF, DRadio": "Nebenkosten",
@@ -67,12 +67,14 @@
     "Tagesgeld": "Investment",
     "Bausparkasse Schwaebisch Hall": "Investment",
     "Abschluss per": "Konto",
+    "Festival": "Freizeit",
     "Eventim AG + Co.": "Freizeit",
     "Cinemaxx": "Freizeit",
     "DECATHLON": "Freizeit",
     "RESTAURANT": "Restaurant",
     "Wirtshaus": "Restaurant",
     "Brauhaus": "Restaurant",
+    "Gasthaus": "Restaurant",
     "FIVE GUYS": "Restaurant",
     "MCDONALDS": "Restaurant",
     "Brauereigasthof": "Restaurant",
@@ -90,5 +92,6 @@
     "Bike24": "Fahrrad",
     "Finanzamt": "Steuerausgleich",
     "Hornbach": "Baumarkt",
-    "Bauhaus": "Baumarkt"
+    "Bauhaus": "Baumarkt",
+    "SPORT SCHECK": "Sport"
 }
